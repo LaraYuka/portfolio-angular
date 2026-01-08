@@ -1,0 +1,34 @@
+<section class="contact-section container py-5">
+    <h3 class="pb-3 fw-bold montagu-slab-uniquifier" style="color: var(--primary);">
+        Contato
+    </h3>
+
+    <div class="row g-4">
+
+        <form class="contact-form contact-card" (ngSubmit)="sendEmail()" #contactForm="ngForm">
+
+            <input type="text" name="name" placeholder="Seu nome" [(ngModel)]="form.name" required />
+
+            <input type="email" name="email" placeholder="Seu email" [(ngModel)]="form.email" required />
+
+
+            <textarea name="message" placeholder="Sua mensagem" [(ngModel)]="form.message" required></textarea>
+
+
+            <button type="submit" [disabled]="loading || !contactForm.valid">
+      {{ loading ? 'Enviando...' : 'Enviar mensagem' }}
+    </button>
+
+            <p class="success" *ngIf="success">
+                Mensagem enviada com sucesso!
+            </p>
+
+            <p class="error" *ngIf="error">
+                Erro ao enviar mensagem. Tente novamente.
+            </p>
+
+        </form>
+
+    </div>
+
+</section>

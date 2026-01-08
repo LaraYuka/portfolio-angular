@@ -1,0 +1,55 @@
+/* CARD – mesmo padrão dos certificados */
+
+.experience-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 16px;
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    z-index: 1;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+
+/* BORDA EM GRADIENTE */
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: var(--gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.experience-card a {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+
+/* PERÍODO */
+
+.experience-period {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.4rem 0 1rem;
+}
+
+
+/* DESCRIÇÃO */
+
+.experience-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}

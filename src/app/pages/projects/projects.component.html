@@ -1,0 +1,138 @@
+<section class="container py-1">
+    <h3 class="pb-3 fw-bold montagu-slab-uniquifier" style="color: var(--primary);">
+        Projetos
+    </h3>
+
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6" *ngFor="let project of sortedProjects | slice:0:3">
+
+            <article class="project-card">
+                <h5>{{ project.title }}</h5>
+                <p>{{ project.year }} • {{ project.status }}</p>
+                <p>{{ project.shortDescription }}</p>
+
+                <button class="btn btn-outline-primary w-100" (click)="openDetails(project)">
+          Ver detalhes
+        </button>
+            </article>
+        </div>
+    </div>
+
+    <!-- BOTÃO -->
+    <div class="text-center mt-4">
+        <button class="btn btn-primary" (click)="toggleProjects()">
+      {{ showAllProjects ? 'Ocultar projetos' : 'Ver todos os projetos' }}
+    </button>
+    </div>
+</section>
+
+<section id="all-projects" class="section section-alt" *ngIf="showAllProjects">
+
+    <div class="container">
+
+        <!-- FILTROS -->
+        <div class="filters mb-4">
+            <select class="form-select" [(ngModel)]="sortOrder">
+        <option value="desc">Mais recentes</option>
+        <option value="asc">Mais antigos</option>
+      </select>
+        </div>
+
+        <!-- LISTA -->
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let project of sortedProjects">
+
+                <article class="project-card">
+                    <h5>{{ project.title }}</h5>
+                    <p>{{ project.year }} • {{ project.status }}</p>
+                    <p>{{ project.shortDescription }}</p>
+
+                    <button class="btn btn-outline-primary w-100" (click)="openDetails(project)">
+            Ver detalhes
+          </button>
+                </article>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- MODAL -->
+<div class="project-modal" *ngIf="selectedProject">
+
+    <!-- OVERLAY -->
+    <div class="modal-overlay" (click)="closeDetails()"></div>
+
+    <!-- CONTEÚDO -->
+    <div class="modal-content" (click)="$event.stopPropagation()">
+
+        <!-- BOTÃO FECHAR -->
+        <button class="close-btn" (click)="closeDetails()">×</button>
+
+        <!-- CONTEÚDO COM SCROLL -->
+        <div class="modal-body">
+
+            <h2>{{ selectedProject.title }} ({{ selectedProject.year }})</h2>
+
+            <p>{{ selectedProject.description }}</p>
+
+            <h3>Motivação</h3>
+            <p>{{ selectedProject.motivation }}</p>
+
+            <h3>Tecnologias</h3>
+            <ul>
+                <li *ngFor="let tech of selectedProject.technologies">
+                    {{ tech }}
+                </li>
+            </ul>
+
+            <h3>Desafios</h3>
+            <ul>
+                <li *ngFor="let challenge of selectedProject.challenges">
+                    {{ challenge }}
+                </li>
+            </ul>
+
+            <h3>O que aprendi</h3>
+            <ul>
+                <li *ngFor="let learning of selectedProject.learnings">
+                    {{ learning }}
+                </li>
+            </ul>
+
+            <div class="links mt-3">
+                <a *ngIf="selectedProject.githubUrl" [href]="selectedProject.githubUrl" target="_blank" class="btn btn-outline-success me-2">
+          GitHub
+        </a>
+
+                <a *ngIf="selectedProject.githubUrl2" [href]="selectedProject.githubUrl2" target="_blank" class="btn btn-outline-success me-2">
+          GitHub - Back
+        </a>
+
+                <a *ngIf="selectedProject.pdfUrl" [href]="selectedProject.pdfUrl" target="_blank" class="btn btn-outline-success">
+          📄 Ver Arquivo
+        </a>
+            </div>
+
+            <!-- 🎥 VÍDEO NO FINAL -->
+            <!-- 🎥 VÍDEO -->
+            <!-- 🎥 VÍDEO -->
+            <!-- DESKTOP -->
+            <!-- DESKTOP -->
+            <div class="video mt-4" *ngIf="!isMobile() && videoUrl">
+                <iframe [src]="videoUrl" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+  </iframe>
+            </div>
+
+            <!-- MOBILE -->
+            <div class="mt-4" *ngIf="isMobile() && selectedProject?.videoUrl">
+                <button type="button" class="btn btn-danger w-100" (click)="openYoutube()">
+    ▶ Assistir no YouTube
+  </button>
+            </div>
+
+
+        </div>
+    </div>

@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+    /* altura do header fixo */
+}
+
+
+/* ===== THEME VARIABLES ===== */
+
+body {
+    /* MENU - modo escuro */
+    --nav-bg: #ffffff;
+    --nav-text: #000000;
+    --primary-color: #38bdf8;
+    --text-color: #ffffff;
+    --text-muted: #d6d6d6;
+    --primary: #f783ac;
+    --secondary: #9d7bff;
+    --gradient: linear-gradient(135deg, #f783ac, #9d7bff);
+    --card-bg: #1a1a22;
+    --bg-color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* LIGHT THEME */
+
+body.light-theme {
+    /* MENU - modo claro */
+    --nav-bg: #000000;
+    --nav-text: #ffffff;
+    --primary-color: #2563eb;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --text-muted: #747474;
+    --primary: #d63384;
+    /* rosa */
+    --secondary: #6f42c1;
+    /* roxo */
+    --gradient: linear-gradient(135deg, #d63384, #6f42c1);
+    --card-bg: #f8f9fa;
+}
+
+.dm-serif-text-regular {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.montagu-slab-uniquifier {
+    font-family: "Montagu Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+.navbar {
+    background-color: var(--nav-bg) !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: var(--nav-text) !important;
+}
+
+.navbar .nav-link:hover {
+    opacity: 0.8;
+}
+
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 12px;
+}
+
+.btn-outline-secondary {
+    color: var(--nav-text);
+    border-color: var(--nav-text);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--nav-text);
+    color: var(--nav-bg);
+}
+
+.title {
+    font-size: 1.3rem;
+}
+
+.sub {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+.project-card {
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

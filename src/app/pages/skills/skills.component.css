@@ -1,0 +1,216 @@
+/* ===== Variáveis de tema ===== */
+
+:root {
+    --bg: #f9fafb;
+    --card-bg: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --gradient: linear-gradient(135deg, #f783ac, #9d7bff);
+}
+
+body.dark {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --gradient: linear-gradient(135deg, #f783ac, #9d7bff);
+}
+
+.gradient-border {
+    position: relative;
+}
+
+.gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 1.2rem;
+    background: var(--gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+/* ===== Seção ===== */
+
+.skills-section {
+    background: var(--bg);
+    padding: 4rem 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+}
+
+
+/* ===== Grid ===== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== Cards ===== */
+
+.skill-card {
+    background: var(--card-bg);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    color: var(--text);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ===== Soft Skills ===== */
+
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.soft-skill {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fbcfe8, #e9d5ff);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+
+/* ===== Hard Skills ===== */
+
+.skill-group {
+    margin-bottom: 1.5rem;
+}
+
+.skill-group h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+}
+
+.skill-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-group li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.skill-group ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.hard-skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .hard-skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .hard-skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== Badges ===== */
+
+.badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.badge.intermediate {
+    background: #38bdf8;
+    color: #020617;
+}
+
+.badge.basic {
+    background: #c084fc;
+    color: #020617;
+}
+
+
+/* ===== Animação ===== */
+
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills-section,
+.skills-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* ===== Idiomas ===== */
+
+.language-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+}
