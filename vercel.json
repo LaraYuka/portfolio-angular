@@ -1,11 +1,6 @@
 {
-    "version": 2,
-    "builds": [{
-        "src": "dist/lara-sakanaka/index.html",
-        "use": "@vercel/static"
-    }],
     "routes": [{
         "src": "/(.*)",
-        "dest": "/dist/lara-sakanaka/index.html"
+        "dest": "/index.html"
     }]
 }
