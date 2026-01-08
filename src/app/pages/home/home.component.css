@@ -3,61 +3,41 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 22px;
-    /* tamanho no desktop */
     height: auto;
-    /* mantém quadrada */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     position: relative;
     z-index: 2;
 }
 
-
-/* Desktop e notebook */
-
 @media (min-width: 992px) {
     #home .row.home-text {
         display: flex !important;
         justify-content: flex-start;
-        /* alinha à esquerda, evita distâncias muito grandes */
         align-items: center;
         gap: 100px;
-        /* espaçamento maior, porém seguro para 1134px */
         flex-wrap: nowrap;
-        /* impede quebra de linha */
     }
-    /* Texto */
     #home .home-text>.col-md-6:first-child {
         flex: 1 1 0;
         max-width: 600px;
-        /* controla largura máxima para não exceder */
         padding-right: 10px;
     }
-    /* Imagem */
     #home .home-text>.col-md-6:last-child {
         flex: 0 0 auto;
-        /* tamanho fixo para a imagem */
         max-width: 420px;
         padding-left: 10px;
     }
     .img-wrapper {
         margin-left: 0 !important;
-        /* garante que não tenha margem extra */
     }
 }
-
-
-/* Grande desktop */
 
 @media (min-width: 1200px) {
     #home .row.home-text {
         gap: 220px;
-        /* ainda mais espaçamento */
     }
 }
-
-
-/* Tablet */
 
 @media (max-width: 991px) {
     .profile-img {
@@ -89,21 +69,16 @@
     }
 }
 
-
-/* Mobile */
-
 @media (max-width: 576px) {
     .profile-img {
         max-width: 240px;
     }
     #home {
         padding-top: 80px;
-        /* evita cortar no topo */
         padding-bottom: 40px;
     }
     #home h1 {
         font-size: 2.2rem;
-        /* reduz o nome */
         line-height: 1.2;
     }
     #home h2 {
@@ -114,12 +89,8 @@
     }
     .img-wrapper {
         max-width: 260px;
-        /* 🔹 não estoura a tela */
     }
 }
-
-
-/* Animação de entrada */
 
 .fade-up {
     opacity: 0;
@@ -142,9 +113,6 @@
     }
 }
 
-
-/* Gradiente reutilizável */
-
 .img-wrapper {
     display: inline-block;
     padding: 6px;
@@ -152,9 +120,6 @@
     background: var(--gradient);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
-
-
-/* Ícones minimalistas */
 
 .icon-link {
     font-size: 1.6rem;

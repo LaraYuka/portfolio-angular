@@ -67,10 +67,6 @@ openDetails(project: Project): void {
 }
 
 
-
-
-
-
 playVideo(): void {
   const videoId = this.getVideoId();
   if (!videoId) return;

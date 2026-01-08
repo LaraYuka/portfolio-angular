@@ -21,7 +21,6 @@ export class ContactComponent {
     message: ''
   };
 
-  // estados da UI
   loading = false;
   success = false;
   error = false;
@@ -44,7 +43,6 @@ export class ContactComponent {
       this.loading = false;
       this.success = true;
 
-      // limpa o formulário
       this.form.name = '';
       this.form.email = '';
       this.form.message = '';

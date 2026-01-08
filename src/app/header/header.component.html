@@ -1,29 +1,19 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container d-flex align-items-center">
-
-        <!-- LOGO -->
         <a class="navbar-brand" href="#home">Lara Sakanaka</a>
-
-        <!-- AÇÕES MOBILE -->
         <div class="d-flex align-items-center d-lg-none">
-
-            <!-- BOTÃO TEMA (MOBILE) -->
             <button class="btn btn-outline-secondary me-2" (click)="toggleTheme()">
         {{ themeService.isDarkMode() ? '☀️' : '🌙' }}
-      </button>
-
-            <!-- BOTÃO MENU -->
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+              <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
 
-        <!-- MENU -->
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto align-items-lg-center">
 
                 <li class="nav-item">
-
                     <a class="nav-link" href="#home" (click)="closeMenu()">Home</a>
                 </li>
 
@@ -51,11 +41,8 @@
                     <a class="nav-link" href="#contact" (click)="closeMenu()">Contato</a>
                 </li>
 
-                <!-- BOTÃO TEMA (DESKTOP) -->
                 <li class="nav-item ms-3 d-none d-lg-block">
-                    <button class="btn btn-outline-secondary" (click)="toggleTheme()">
-            {{ themeService.isDarkMode() ? '☀️' : '🌙' }}
-          </button>
+                    <button class="btn btn-outline-secondary" (click)="toggleTheme()">{{ themeService.isDarkMode() ? '☀️' : '🌙' }}</button>
                 </li>
 
             </ul>

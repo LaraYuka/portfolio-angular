@@ -100,8 +100,8 @@ motivation: 'Ter uma presença profissional na web e um espaço organizado para 
   'Estruturação e organização de projetos front-end'
 ],
     status: 'Finalizado',
-    githubUrl: 'https://github.com/seu-usuario/portfolio',
-    liveUrl: 'https://meuportfolio.com',
+    githubUrl: 'https://github.com/LaraYuka/portfolio-angular',
+    liveUrl: 'https://lara-sakanaka.vercel.app/',
   },
 {
   id: 11,

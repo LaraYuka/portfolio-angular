@@ -18,7 +18,6 @@
         </div>
     </div>
 
-    <!-- BOTÃO -->
     <div class="text-center mt-4">
         <button class="btn btn-primary" (click)="toggleProjects()">
       {{ showAllProjects ? 'Ocultar projetos' : 'Ver todos os projetos' }}
@@ -30,7 +29,6 @@
 
     <div class="container">
 
-        <!-- FILTROS -->
         <div class="filters mb-4">
             <select class="form-select" [(ngModel)]="sortOrder">
         <option value="desc">Mais recentes</option>
@@ -38,7 +36,6 @@
       </select>
         </div>
 
-        <!-- LISTA -->
         <div class="row g-4">
             <div class="col-lg-4 col-md-6" *ngFor="let project of sortedProjects">
 
@@ -58,20 +55,14 @@
 </section>
 
 
-
-<!-- MODAL -->
 <div class="project-modal" *ngIf="selectedProject">
 
-    <!-- OVERLAY -->
     <div class="modal-overlay" (click)="closeDetails()"></div>
 
-    <!-- CONTEÚDO -->
     <div class="modal-content" (click)="$event.stopPropagation()">
 
-        <!-- BOTÃO FECHAR -->
         <button class="close-btn" (click)="closeDetails()">×</button>
 
-        <!-- CONTEÚDO COM SCROLL -->
         <div class="modal-body">
 
             <h2>{{ selectedProject.title }} ({{ selectedProject.year }})</h2>
@@ -116,21 +107,15 @@
         </a>
             </div>
 
-            <!-- 🎥 VÍDEO NO FINAL -->
-            <!-- 🎥 VÍDEO -->
-            <!-- 🎥 VÍDEO -->
-            <!-- DESKTOP -->
-            <!-- DESKTOP -->
             <div class="video mt-4" *ngIf="!isMobile() && videoUrl">
                 <iframe [src]="videoUrl" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
   </iframe>
             </div>
 
-            <!-- MOBILE -->
             <div class="mt-4" *ngIf="isMobile() && selectedProject?.videoUrl">
                 <button type="button" class="btn btn-danger w-100" (click)="openYoutube()">
-    ▶ Assistir no YouTube
-  </button>
+                  ▶ Assistir no YouTube
+                </button>
             </div>
 
 
