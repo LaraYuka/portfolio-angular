@@ -2,6 +2,14 @@ import { Experience } from '../models/experience.model';
 
 export const EXPERIENCES: Experience[] = [
   {
+  role: 'Assistente Financeiro',
+  company: 'v-JOY',
+  location: 'Sorocaba - SP',
+  period: '2026 - Atualmente',
+  description: 'Responsável pelo suporte às rotinas de contas a pagar, incluindo conferência de documentos, controle de vencimentos e organização de processos financeiros. Experiência no cumprimento de prazos, resolução de demandas administrativas e colaboração entre setores, fortalecendo habilidades analíticas, organização e atenção aos detalhes.'
+},
+
+  {
   role: 'Monitora de Creche (Concursada)',
   company: 'CMEI Sonho Meu',
   location: 'Mariópolis - PR',
